@@ -1,0 +1,8 @@
+<$HOME/app/mk/inc/config
+PROGNAME = xbar
+VERSION = 0.1
+INCS = $X11INC 
+LIBS = $X11LIB
+DEFS = -DPROGNAME=\"$NAME\"\
+	-DVERSION=\"$VERSION\"
+CFILES = main.c
