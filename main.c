@@ -75,6 +75,7 @@ xwork(void)
 {
 	KeySym key;
 	char buf[BUFSIZ];
+	char str[BUFSIZ];
 	while(1){
 		XNextEvent(dpy, &ev);
 		if( ev.type==Expose && ev.xexpose.count==0){
@@ -91,7 +92,8 @@ xwork(void)
 			xredraw();
 
 			if(val != prevval){
-				printf("%f\n", val);
+				sprintf(str, "%f\n", val);
+				write(1, str, strlen(str));
 				prevval = val ;
 			}
 		} 
